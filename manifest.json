@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "Performing transliteration",
+    "version": "1.1",
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "clipboardWrite"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "commands": {
+        "transp_q": {
+            "suggested_key": {
+                "default": "Ctrl+Q",
+                "mac": "Command+Q"
+            },
+            "description": "Процесс транслитерации и запись готового текста в буфер обмена."
+        },
+        "copy_text": {
+            "suggested_key": {
+                "default": "Ctrl+M",
+                "mac": "Command+M"
+            },
+            "description": "Запись текста для транслитерации."
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["translate.js", "commandHandlers.js", "notification.js"],
+            "run_at": "document_end"
+        }
+    ]
+}
