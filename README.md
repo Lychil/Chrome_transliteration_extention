@@ -29,8 +29,7 @@ This Chrome extension helps users automatically convert text typed in the wrong 
 
 ## Hotkeys
 
-- **Ctrl + M**: Copy selected text after converting it from English layout to the Russian layout.
-- **Ctrl + Q**: Trigger the transliteration process and show a notification.
+- **Ctrl + Q**: Transliteration of the selected text is started.
 
 ## Privacy Policy
 

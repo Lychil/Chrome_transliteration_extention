@@ -1,9 +1,7 @@
 const NOTIFICATIONS = {
-    SUCCESS_COPY: "Текст записан.",
-    ERROR_NO_SELECTION: "Текст не выделен.",
     SUCCESS_TRANSPILE: "Транслитерация выполнена и текст добавлен в буфер обмена.",
     ERROR_TRANSPILE: "При транслитерации произошла ошибка, попробуйте снова.",
-    ERROR_NO_TEXT: "Нет текста для транслитерации."
+    ERROR_NO_TEXT: "Текст для транслитерации не выделен."
 };
 
 const showNotification = (message, isOk) => {

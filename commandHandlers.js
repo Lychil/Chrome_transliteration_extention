@@ -1,16 +1,23 @@
 function handleCopyText() {
-    const selectedText = window.getSelection()?.toString();
-    if (selectedText) {
-        window.selectedText = selectedText;
-        showNotification(NOTIFICATIONS.SUCCESS_COPY, true);
-    } else {
-        showNotification(NOTIFICATIONS.ERROR_NO_SELECTION, false);
-    }
 }
 
 function handleTranspileText() {
-    if (window.selectedText) {
-        navigator.clipboard.writeText(translateText(window.selectedText))
+    let selectedText = '';
+    const activeElement = document.activeElement;
+
+    if (activeElement && (activeElement.tagName === "INPUT" || activeElement.tagName === "TEXTAREA")) {
+        const selectionStart = activeElement.selectionStart;
+        const selectionEnd = activeElement.selectionEnd;
+
+        if (selectionStart !== null && selectionEnd !== null) {
+            selectedText = activeElement.value.substring(selectionStart, selectionEnd);
+        }
+    } else {
+        selectedText = window.getSelection()?.toString();
+    }
+
+    if (selectedText) {
+        navigator.clipboard.writeText(translateText(selectedText))
             .then(() => {
                 showNotification(NOTIFICATIONS.SUCCESS_TRANSPILE, true);
             })
