@@ -15,9 +15,7 @@ function handleCommandOnTab(tabId, command) {
 }
 
 function processCommand(command) {
-    if (command === 'copy_text') {
-        handleCopyText(showNotification);
-    } else if (command === 'transp_q') {
+    if (command === 'transp_q') {
         handleTranspileText(showNotification);
     }
 }

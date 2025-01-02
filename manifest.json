@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Performing transliteration",
-    "version": "1.1",
+    "version": "1.2",
     "permissions": [
         "scripting",
         "activeTab",
@@ -21,13 +21,6 @@
                 "mac": "Command+Q"
             },
             "description": "Процесс транслитерации и запись готового текста в буфер обмена."
-        },
-        "copy_text": {
-            "suggested_key": {
-                "default": "Ctrl+M",
-                "mac": "Command+M"
-            },
-            "description": "Запись текста для транслитерации."
         }
     },
     "content_scripts": [
